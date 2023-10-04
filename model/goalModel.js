@@ -5,7 +5,7 @@ const goalSchema = mongoose.Schema({
     goal: {           //goalmodel or goalcontroller ""goal"" wala  same hona chahiye 
 
         type: String,
-        required: [true, "please all the Desired field"]
+        require: [true, "please all the Desired field"]
 
     }
 }, {

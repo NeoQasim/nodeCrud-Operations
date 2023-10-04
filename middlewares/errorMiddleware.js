@@ -3,6 +3,6 @@ const errorHandler = (err, req, res, next) => {
         errorfrom_middleware: err.message
     })
 
-}
+}   
 
 module.exports = { errorHandler }
