@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const goalSchema = mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "usermodelnames",
+    },
 
     goal: {           //goalmodel or goalcontroller ""goal"" wala  same hona chahiye 
 

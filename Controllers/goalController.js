@@ -4,7 +4,7 @@ const goalModel = require('../model/goalModel');
 //ko call krenge aur find ya create ya respective method lgana ha jese line 7 ma find or line 20 ma create ka method 
 //lgya aha 'goalModel' pe q k model ko maine "goalModel  nam k const ma store krwaya ha aur wahee per goalSchema defined ha"
 const getGoal = asyncHandler(async (req, res) => {
-    const getgoals = await goalModel.find()
+    const getgoals = await goalModel.find({ user: req.user.id })
     res.status(200).send(getgoals)
 }
 )
@@ -15,10 +15,11 @@ const addGoal = asyncHandler(async (req, res) => {
 
     if (!goal) {
         res.status(400);
-        throw new Error('Please enter the field')
+        throw new Error('Please enter all the fields ')
     }
     const myGoal = await goalModel.create({
-        goal
+        goal,
+        user: req.user._id
     })
 
     res.status(200).send(myGoal);
