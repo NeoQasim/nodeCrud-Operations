@@ -62,6 +62,6 @@ module.exports = {
     getGoal,
     addGoal,
     getUser,
-    updategoal,
+    updategoal, 
     deletegoal
 }
