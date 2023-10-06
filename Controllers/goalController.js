@@ -19,7 +19,7 @@ const addGoal = asyncHandler(async (req, res) => {
     }
     const myGoal = await goalModel.create({
         goal,
-        user: req.user._id
+        user: req.user.id
     })
 
     res.status(200).send(myGoal);
@@ -62,6 +62,6 @@ module.exports = {
     getGoal,
     addGoal,
     getUser,
-    updategoal, 
+    updategoal,
     deletegoal
 }
